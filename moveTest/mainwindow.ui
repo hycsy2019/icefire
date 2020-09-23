@@ -6,45 +6,41 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1249</width>
+    <height>818</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">#MainWin{border-image: url(:/character/resource/background1.png);}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <property name="styleSheet">
+    <string notr="true">#centralwidget{border-image: url(:/character/resource/background1.png);}
+</string>
+   </property>
+   <widget class="QLabel" name="icegirl">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>140</y>
-      <width>201</width>
-      <height>301</height>
+      <x>10</x>
+      <y>630</y>
+      <width>131</width>
+      <height>211</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource.qrc">:/character/resource/冰娃正面.png</pixmap>
+     <pixmap resource="resource.qrc">:/character/resource/icegirl_front.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>26</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
   <include location="resource.qrc"/>

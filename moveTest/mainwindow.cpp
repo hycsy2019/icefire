@@ -3,50 +3,53 @@
 
 void MainWindow::keyMove()
 {
-    /*计时结束处理按键消息*/
-    connect(updateTimer,&QTimer::timeout,[this]
+    connect(jumpTimer, &QTimer::timeout, [this]
     {
-        if(pressedKeys.isEmpty())
-        {
-            updateTimer->stop();
-            return;
-        }
-    for(int key:pressedKeys)
-    {
-        /*由方向键消息移动label*/
-        switch(key)
-        {
-        case Qt::Key_Up:
-            y =ui->label->y() - SPEED;
-            if(y > -10)//边界判断
-                ui->label->move(ui->label->x(), y);//向上移动就是x不变y减小
-            break;
-        case Qt::Key_Down:
-            y = ui->label->y() + SPEED;
-            if(y < this->height() - 40)
-            {
-                ui->label->move(ui->label->x(), y);//向下移动是x不变y 变大
-            }
-            break;
-        case Qt::Key_Right:
-            x = ui->label->x() + SPEED;
-            if(x < this->width() - 40)
-            {
-                ui->label->move(x, ui->label->y());
-            }
-            break;
-        case Qt::Key_Left:
-            x = ui->label->x() -SPEED;
-            if(x > -10)
-                ui->label->move(x, ui->label->y());
-            break;
-        default:
-            break;
-        }
-    }
-    /*更新界面*/
-    update();
+        /*跳跃处理*/
+        icegirl->jump();
+
+        /*暂停计时器*/
+        jumpTimer->stop();
+
+        /*判断是否继续执行跳跃动画*/
+        if (icegirl->jump_state&&icegirl->y_new!=icegirl->y_floor)
+            jumpTimer->start(JUMP_UPDATE_TIME);
     });
+
+        /*计时结束处理按键消息*/
+        connect(keyTimer, &QTimer::timeout, [this]
+        {
+            if (pressedKeys.isEmpty())
+            {
+                keyTimer->stop();
+            }
+            for (int key : pressedKeys)
+            {
+                /*由方向键消息移动label*/
+                switch (key)
+                {
+                case Qt::Key_Up:
+                    /* 若人物在地面上则起跳，否则不处理 */
+                    if (icegirl->jump_state == 0)
+                    {
+                        icegirl->jump();
+                        jumpTimer->start(JUMP_UPDATE_TIME);
+                    }
+                    break;
+
+                case Qt::Key_Right:
+                    icegirl->move(SPEED, 0);
+                    break;
+
+                case Qt::Key_Left:
+                    icegirl->move(-SPEED, 0);
+                    break;
+
+                default:
+                    break;
+                }
+            }
+        });
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -55,8 +58,12 @@ MainWindow::MainWindow(QWidget *parent)
     /*建立图形界面*/
     ui->setupUi(this);
 
+    /*创建人物*/
+    icegirl = new Character(ui->icegirl);
+
     /*创建计时器*/
-    updateTimer=new QTimer(this);
+    keyTimer=new QTimer(this);
+    jumpTimer = new QTimer(this);
 
     /*将label的移动处理单独放入一个子线程，主线程接收键盘消息，优化移动控制*/
      QtConcurrent::run(this,&MainWindow::keyMove);
@@ -75,8 +82,15 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
            pressedKeys.insert(event->key());
 
        /*判断是否运行，不然一直触发就一直不能timeout，在计时时间内接收键盘消息*/
-       if(!updateTimer->isActive())
-           updateTimer->start(KEYTIME);
+        if (!keyTimer->isActive())
+        {
+            keyTimer->start(KEY_TIME);
+            if (!icegirl->jump_state)
+            {
+                ui->icegirl->setPixmap(QPixmap(QString::fromUtf8(":/character/resource/icegirl_front.png")));
+                ui->icegirl->setScaledContents(true);
+            }
+        }
 }
 
 void MainWindow::keyReleaseEvent(QKeyEvent *event)
@@ -87,6 +101,6 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event)
 
     /*若键盘消息容器为空，提前结束计时*/
     if(pressedKeys.isEmpty())
-        updateTimer->stop();
+        keyTimer->stop();
 }
 
