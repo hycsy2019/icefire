@@ -1,5 +1,7 @@
 <RCC>
-    <qresource prefix="/character">
-        <file>resource/冰娃正面.png</file>
-    </qresource>
+  <qresource prefix="/character">
+    <file>resource/icegirl_side.png</file>
+    <file>resource/background1.png</file>
+    <file>resource/icegirl_front.png</file>
+  </qresource>
 </RCC>
