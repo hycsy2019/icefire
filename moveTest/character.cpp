@@ -32,28 +32,27 @@ Character::~Character()
 
  void Character::jump()
  {
+     /* 若当前非跳起状态，直接返回 */
+     if (jump_state == 0) return;
+     else
+     {
          if (jump_t < (-2 * JUMP_V0 / JUMP_G))
          {
-             jump_state=1;
-
              /* 计算当前时间单位高度偏移量 */
              float dh = JUMP_V0 + JUMP_G * jump_t + JUMP_G / 2;
 
-             /*判断是否在下落态*/
-             if(dh<0)
-                 fall_state=1;
-
              /* 移动 */
-             move(0, -dh);
+             move(dx_jump, -dh);
 
              jump_t++;
          }
          else
          {
              /* 落回地面 */
-             fall_state=0;
              jump_t = 0;
-             move(0,y_floor-img->y());
              jump_state = 0;
+             img->move(img->x()+dx_jump, y_floor);
          }
+         dx_jump = 0;
+     }
  }
