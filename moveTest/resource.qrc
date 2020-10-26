@@ -1,8 +1,24 @@
 <RCC>
+<<<<<<< Updated upstream
   <qresource prefix="/character">
     <file>resource/fireboy_front.png</file>
     <file>resource/icegirl_side.png</file>
     <file>resource/background1.png</file>
     <file>resource/icegirl_front.png</file>
   </qresource>
+=======
+    <qresource prefix="/character">
+        <file>resource/character_img_3.0/fire_boy_front_1.0.png</file>
+        <file>resource/character_img_3.0/fire_boy_toLeft_1.0.png</file>
+        <file>resource/character_img_3.0/fire_boy_toRight_1.0.png</file>
+        <file>resource/character_img_3.0/ice_girl_front_1.0.png</file>
+        <file>resource/character_img_3.0/ice_girl_toLeft_1.0.png</file>
+        <file>resource/character_img_3.0/ice_girl_toRight_1.0.png</file>
+    </qresource>
+    <qresource prefix="/background">
+        <file>resource/background_img/test_map/door_close.png</file>
+        <file>resource/background_img/test_map/door_delete.png</file>
+        <file>resource/background_img/test_map/door_open.png</file>
+    </qresource>
+>>>>>>> Stashed changes
 </RCC>

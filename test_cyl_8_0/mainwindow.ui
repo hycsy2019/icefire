@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1604</width>
+    <height>1207</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1604</width>
+    <height>1207</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1604</width>
+    <height>1207</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>1604</width>
+     <height>1207</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1604</width>
+     <height>1207</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#centralwidget{border-image: url(:/background/resource/background1.png);}</string>
+   </property>
+   <widget class="QLabel" name="icegirl">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>1050</y>
+      <width>60</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/character/resource/ice_girl_front_1.0.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fireboy">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>1050</y>
+      <width>60</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/character/resource/fire_boy_front_1.0.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1604</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
