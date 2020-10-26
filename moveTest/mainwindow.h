@@ -24,6 +24,10 @@ public:
     bool jump_state = 0;//是否在跳跃状态
     int jump_t = 0;//起跳时间单位数
     float y_floor;//当前所处的地面高度
+<<<<<<< Updated upstream
+=======
+    float y_head;//跳起能达到的最高高度
+>>>>>>> Stashed changes
     float dx_jump=0;//跳起时单位时间内水平位移
     Character(QLabel* label);//传入label指针
     ~Character();
@@ -31,8 +35,12 @@ public:
     void jump();//根据jump_state处理人物跳跃
 
 private:
+<<<<<<< Updated upstream
     float x_old,y_old;//人物的初始坐标
     float x_new,y_new;//人物移动后的坐标
+=======
+    float x,y;//人物的坐标
+>>>>>>> Stashed changes
     QLabel* img;//人物图标
 };
 

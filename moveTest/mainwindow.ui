@@ -24,17 +24,17 @@
    <widget class="QLabel" name="icegirl">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>630</y>
-      <width>131</width>
-      <height>211</height>
+      <x>60</x>
+      <y>595</y>
+      <width>45</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resource.qrc">:/character/resource/icegirl_front.png</pixmap>
+     <pixmap resource="resource.qrc">:/character/resource/character_img_3.0/ice_girl_front_1.0.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -43,22 +43,58 @@
    <widget class="QLabel" name="fireboy">
     <property name="geometry">
      <rect>
+<<<<<<< Updated upstream
       <x>10</x>
       <y>520</y>
       <width>131</width>
       <height>211</height>
+=======
+      <x>60</x>
+      <y>700</y>
+      <width>41</width>
+      <height>71</height>
+>>>>>>> Stashed changes
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
+<<<<<<< Updated upstream
      <pixmap resource="resource.qrc">:/character/resource/fireboy_front.png</pixmap>
+=======
+     <pixmap resource="resource.qrc">:/character/resource/character_img_3.0/fire_boy_front_1.0.png</pixmap>
+>>>>>>> Stashed changes
     </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
    </widget>
+<<<<<<< Updated upstream
+=======
+   <widget class="QLabel" name="background">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>0</y>
+      <width>1249</width>
+      <height>818</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/background/resource/background_img/test_map/door_close.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>background</zorder>
+   <zorder>fireboy</zorder>
+   <zorder>icegirl</zorder>
+>>>>>>> Stashed changes
   </widget>
  </widget>
  <resources>

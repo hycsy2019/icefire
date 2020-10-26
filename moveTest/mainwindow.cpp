@@ -107,6 +107,12 @@ MainWindow::MainWindow(QWidget *parent)
     /*创建人物*/
     icegirl = new Character(ui->icegirl);
     fireboy = new Character(ui->fireboy);
+<<<<<<< Updated upstream
+=======
+
+    /*设置顶部最大高度*/
+    icegirl->y_head = 580;
+>>>>>>> Stashed changes
 
     /*创建计时器*/
     keyTimer=new QTimer(this);

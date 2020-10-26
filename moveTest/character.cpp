@@ -1,13 +1,16 @@
 ﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+int rebound;//记录下一次跳跃是否反弹
+
 Character::Character(QLabel* label)
 {
     /* 初始化人物图标、坐标 */
     img=label;
-    x_old=label->x();
-    y_old=label->y();
+    x=label->x();
+    y=label->y();
     y_floor = label->y();
+    y_head = 0;
 }
 
 Character::~Character()
@@ -19,15 +22,11 @@ Character::~Character()
  void Character::move(float dx,float dy)
  {
      /* 更新label坐标 */
-     x_new=img->x()+dx;
-     y_new=img->y()+dy;
-
-     /* 更新上一次坐标 */
-     x_old = img->x();
-     y_old = img->y();
+     x=img->x()+dx;
+     y=img->y()+dy;
 
      /* 移动 */
-     img->move(x_new,y_new);
+     img->move(x,y);
  }
 
  void Character::jump()
@@ -36,14 +35,34 @@ Character::~Character()
      if (jump_state == 0) return;
      else
      {
+<<<<<<< Updated upstream
+=======
+         if (rebound == 1)
+             rebound = 0;
+>>>>>>> Stashed changes
          if (jump_t < (-2 * JUMP_V0 / JUMP_G))
          {
              /* 计算当前时间单位高度偏移量 */
              float dh = JUMP_V0 + JUMP_G * jump_t + JUMP_G / 2;
 
+<<<<<<< Updated upstream
              /* 移动 */
              move(dx_jump, -dh);
 
+=======
+             /*判断是否达到最大高度*/
+             if (y < y_head)
+             {
+                 y = y_head;
+                 img->move(x, y);
+                 jump_t = -2 * JUMP_V0 / JUMP_G - jump_t+1;
+                 rebound = 1;
+                 return;
+             }
+
+             /* 移动 */
+             move(dx_jump, -dh);
+>>>>>>> Stashed changes
              jump_t++;
          }
          else
