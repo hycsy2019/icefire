@@ -1,0 +1,45 @@
+<RCC>
+    <qresource prefix="/character">
+        <file>resource/fire_boy_toLeft_1.0.png</file>
+        <file>resource/fire_boy_toRight_1.0.png</file>
+        <file>resource/ice_girl_toLeft_1.0.png</file>
+        <file>resource/ice_girl_toRight_1.0.png</file>
+        <file>resource/fire_boy_front_1.0.png</file>
+        <file>resource/ice_girl_front_1.0.png</file>
+    </qresource>
+    <qresource prefix="/background">
+        <file>resource/background1.png</file>
+    </qresource>
+    <qresource prefix="/tool">
+        <file>resource/door_open.png</file>
+        <file>resource/fire_door_close.png</file>
+        <file>resource/ice_door_close.png</file>
+        <file>resource/trampoline.png</file>
+        <file>resource/fire_pool.png</file>
+        <file>resource/ice_pool.png</file>
+        <file>resource/poisonous_pool.png</file>
+        <file>resource/ghost.png</file>
+        <file>resource/box.png</file>
+        <file>resource/goon.jpg</file>
+        <file>resource/button.jpg</file>
+        <file>resource/portal.png</file>
+    </qresource>
+    <qresource prefix="/diamond">
+        <file>resource/blue.png</file>
+        <file>resource/red.png</file>
+    </qresource>
+    <qresource prefix="/success">
+        <file>resource/goon.jpg</file>
+        <file>resource/success.png</file>
+    </qresource>
+    <qresource prefix="/gameover">
+        <file>resource/back_to_menu.jpg</file>
+        <file>resource/game_over.png</file>
+        <file>resource/try_again.jpg</file>
+    </qresource>
+    <qresource prefix="/start">
+        <file>resource/start.png</file>
+        <file>resource/start_game.png</file>
+        <file>resource/start_game_1.png</file>
+    </qresource>
+</RCC>

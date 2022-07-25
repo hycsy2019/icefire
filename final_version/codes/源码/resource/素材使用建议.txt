@@ -1,0 +1,8 @@
+···door_open && fire_door_close && ice_door_close：
+lable中选择pixmap添加资源，勾选scaledContents，label的大小（121×121）
+
+···fire_boy_front_1.0 && ice_girl_front_1.0:
+lable中选择pixmap添加资源，勾选scaledContents，label的大小（60×90）
+
+···background1
+Qwidget中添加stylesheet,格式如下：#centralwidget{border-image: url(:/background/resource/background1.png);}，Qwidget大小为1604×1207，最大值和最小值均如此设定，保证地图大小不可变。
